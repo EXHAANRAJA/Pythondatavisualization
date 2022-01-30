@@ -1,6 +1,16 @@
+# Blank Axis and Figure Section 
 import matplotlib.pyplot as plt 
-x = [5,10,15]
-y = [25,35,15]
-plt.plot(x,y)
-plt.title("Line Graph")
+import pandas as pd
+ax,figure = plt.subplots()
+# plt.show()
+
+# Style Used through MatplotLib
+plt.style.use("classic")
+df = pd.read_csv("D:/Python Runs/csv/austin_weather.csv")
+
+plt.title("Average Rainfall Per Month")
+plt.xlabel("Month")
+plt.ylabel("Average RainFall")
+
+plt.plot(df['Month'],df['MLY-PRCP-NORMAL'])
 plt.show()
